@@ -18,6 +18,9 @@
 		D92F0B7829E086A200B37C0C /* LogInStoryboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92F0B7729E086A200B37C0C /* LogInStoryboardUITests.swift */; };
 		D92F0B7A29E086A200B37C0C /* LogInStoryboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92F0B7929E086A200B37C0C /* LogInStoryboardUITestsLaunchTests.swift */; };
 		D92F0B8C29E4A23000B37C0C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92F0B8B29E4A23000B37C0C /* RegisterViewController.swift */; };
+		D9AB70B929E8881600E4B780 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB70B829E8881600E4B780 /* TableViewController.swift */; };
+		D9AB70BB29E88A2100E4B780 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB70BA29E88A2100E4B780 /* DataModel.swift */; };
+		D9AB70BD29E894D100E4B780 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB70BC29E894D100E4B780 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		D92F0B7729E086A200B37C0C /* LogInStoryboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStoryboardUITests.swift; sourceTree = "<group>"; };
 		D92F0B7929E086A200B37C0C /* LogInStoryboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStoryboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D92F0B8B29E4A23000B37C0C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D9AB70B829E8881600E4B780 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D9AB70BA29E88A2100E4B780 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		D9AB70BC29E894D100E4B780 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				D92F0B6429E086A100B37C0C /* Info.plist */,
 				D92F0B5C29E0869E00B37C0C /* LogInStoryboard.xcdatamodeld */,
 				D92F0B8B29E4A23000B37C0C /* RegisterViewController.swift */,
+				D9AB70B829E8881600E4B780 /* TableViewController.swift */,
+				D9AB70BC29E894D100E4B780 /* TableViewCell.swift */,
+				D9AB70BA29E88A2100E4B780 /* DataModel.swift */,
 			);
 			path = LogInStoryboard;
 			sourceTree = "<group>";
@@ -264,7 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AB70BB29E88A2100E4B780 /* DataModel.swift in Sources */,
+				D9AB70BD29E894D100E4B780 /* TableViewCell.swift in Sources */,
 				D92F0B5829E0869E00B37C0C /* ViewController.swift in Sources */,
+				D9AB70B929E8881600E4B780 /* TableViewController.swift in Sources */,
 				D92F0B5429E0869E00B37C0C /* AppDelegate.swift in Sources */,
 				D92F0B5E29E0869E00B37C0C /* LogInStoryboard.xcdatamodeld in Sources */,
 				D92F0B8C29E4A23000B37C0C /* RegisterViewController.swift in Sources */,

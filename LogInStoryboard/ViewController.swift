@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var users: [NSManagedObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,7 +27,7 @@ class ViewController: UIViewController {
                 let password = passwordField.text ?? ""
                 
                 if authenticate(username: username, password: password) {
-                    let nextViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "nextView")
+                    let nextViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "tableView")
                     self.present(nextViewController, animated:true, completion:nil)
 
                 } else {
@@ -39,12 +38,12 @@ class ViewController: UIViewController {
             func authenticate(username: String, password: String) -> Bool {
                 let context = (UIApplication.shared.delegate as!AppDelegate).persistentContainer.viewContext
                 
-                let fetchRequest = NSFetchRequest<User>(entityName: "User")
-                fetchRequest.predicate = NSPredicate(format: "username = %@", username)
+                let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+                fetchRequest.predicate = NSPredicate(format: "username == %@", "test2")
                 
                 do {
                     let fetchedUsers = try context.fetch(User.fetchRequest())
-                    print(fetchedUsers.first?.username, fetchedUsers.first?.password)
+                   // print(fetchedUsers)
                     if let user = fetchedUsers.first,user.password == password{
                         return true
                     }else{
