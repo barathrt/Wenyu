@@ -21,6 +21,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
+        myTableView.estimatedRowHeight = 100.0 // Adjust Primary table height
+        myTableView.rowHeight = UITableView.automaticDimension
         callAPI()
         // Do any additional setup after loading the view.
     }
@@ -56,10 +58,14 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //print(responseArray[indexPath.row])
         cell.titleLabel?.text = responseArray[indexPath.row].title
         cell.idLabel?.text = String(responseArray[indexPath.row].id ?? 0)
+        cell.textView?.text = responseArray[indexPath.row].body
+        
+        
+        cell.textView?.textColor = UIColor(red: 70/256, green: 130/256, blue: 180/256, alpha: 1.0)
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
+    func tableView(_ tableView: UITableView, heightForRowAtIndexPath section: Int) -> CGFloat {
+        return 150
     }
     
     /*

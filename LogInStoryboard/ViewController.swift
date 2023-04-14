@@ -16,8 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var mainImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainImage.image = UIImage(named: "questionchick")
         // Do any additional setup after loading the view.
     }
     
@@ -36,19 +39,26 @@ class ViewController: UIViewController {
             }
             
             func authenticate(username: String, password: String) -> Bool {
+                
+            
                 let context = (UIApplication.shared.delegate as!AppDelegate).persistentContainer.viewContext
                 
-                let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "username == %@", "test2")
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+                fetchRequest.returnsObjectsAsFaults = false
+                //fetchRequest.predicate = NSPredicate(format: "username == %@", "test2")
                 
                 do {
                     let fetchedUsers = try context.fetch(User.fetchRequest())
                    // print(fetchedUsers)
-                    if let user = fetchedUsers.first,user.password == password{
-                        return true
-                    }else{
-                        return false
+                    for user in fetchedUsers as [NSManagedObject]{
+                        if username == user.value(forKey: "username") as? String{
+                            if password == user.value(forKey: "password") as! String{
+                                return true
+                            }
+                        }
                     }
+                                
+                    return false
                 }catch{
                     print("Error")
                     
